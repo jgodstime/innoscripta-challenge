@@ -5,7 +5,7 @@ use App\Services\Article\Providers\NewYorkTimes;
 use App\Services\Article\Providers\TheNews;
 
 return [
-    'default' => env('DEFAULT_SOURCE', 'guardian'),
+    'default' => env('DEFAULT_ARTICLE_SOURCE', 'guardian'),
 
       /**
      * The key value of the providers should be the same as the class name of the article provider
