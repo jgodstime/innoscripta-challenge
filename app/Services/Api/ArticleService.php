@@ -14,6 +14,7 @@ class ArticleService extends BaseService
 
     public function getArticle(array $data): array
     {
+        // Todo: We can use Laravel's cache system to store the articles for a certain period of time based on search params, so that we can avoid unnecessary database queries and invalidate the cache when a new article is added or an existing article is updated.
         $articles = $this->article
             ->with(['source:id,name', 'category:id,name', 'author:id,name'])
             ->select('id', 'title', 'slug', 'summary', 'image_url', 'web_url', 'author_id', 'source_id', 'published_at', 'updated_at', 'category_id')
